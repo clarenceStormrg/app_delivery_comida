@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mi_app_de_prueba/Food%20Delivery%20App/consts.dart';
+import 'package:mi_app_de_prueba/Food%20Delivery%20App/pages/food_delivery_home_screen.dart';
 
 class MyOnBoardPage extends StatelessWidget {
   const MyOnBoardPage({super.key});
@@ -107,7 +108,15 @@ class MyOnBoardPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 30),
                     MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const FoodDeliveryHomeScreen(),
+                          ),
+                          (route) => false,
+                        );
+                      },
                       color: red,
                       height: 65,
                       minWidth: 250,
@@ -133,12 +142,12 @@ class MyOnBoardPage extends StatelessWidget {
 class CustomClip extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
-    Path path =Path();
+    Path path = Path();
     path.lineTo(0, 30);
     path.lineTo(0, size.height);
     path.lineTo(size.width, size.height);
     path.lineTo(size.width, 30);
-    path.quadraticBezierTo(size.width / 2,-30, 0, 30);
+    path.quadraticBezierTo(size.width / 2, -30, 0, 30);
     path.close();
     return path;
   }

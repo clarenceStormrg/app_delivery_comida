@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mi_app_de_prueba/Food%20Delivery%20App/material.dart';
+import 'package:mi_app_de_prueba/Food%20Delivery%20App/pages/onboard_page.dart';
 
 void main() {
   runApp(const MyApp());
